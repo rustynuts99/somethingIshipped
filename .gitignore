@@ -39,3 +39,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Exclude all macOS system files
+.DS_Store
+.AppleDouble
+.apdisk
+
+# Exclude specific macOS directories
+Desktop/
+Documents/
+Library/
+Pictures/
+
+# Exclude system-specific directories
+/Library/
+/System/
+/Users/
+
+# Ignore any logs or temporary files
+*.log
+*.tmp
+

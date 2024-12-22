@@ -1,14 +1,37 @@
 'use client'
 
+// import { profile } from "console"
+import Link from 'next/link'
+
 import { signIn, signOut, useSession } from "next-auth/react"
 
 const NavBar = () => {
   const { data: session } = useSession()
 
   return (
+
     <nav className="flex items-center justify-between bg-gray-800 text-white p-4">
-      {/* Logo */}
-      <div className="text-lg font-bold">Something I Shipped</div>
+    {/* Logo */}
+    <Link href="/">
+      <div className="text-lg font-bold cursor-pointer">Something I Shipped</div>
+    </Link>
+
+    <div className="flex space-x-4">
+      <Link href="/">
+        <span className="hover:text-orange-500 cursor-pointer">Home</span>
+      </Link>
+      <Link href="/about">
+        <span className="hover:text-orange-500 cursor-pointer">About</span>
+      </Link>
+      {session && (
+        <Link href="/profile">
+          <span className="hover:text-orange-500 cursor-pointer">Profile</span>
+        </Link>
+      )}
+    </div>
+
+
+
 
       {/* Conditional Rendering Based on Session */}
       <div>

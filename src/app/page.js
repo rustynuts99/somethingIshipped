@@ -16,6 +16,9 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <div className="bg-orange-500 text-white text-center py-5">
+        <p>🚀 We're in beta! More features coming soon!</p>
+      </div>
       <button
         onClick={handleSignIn}
         className="px-4 py-2 font-bold text-white bg-black rounded hover:bg-gray-800"

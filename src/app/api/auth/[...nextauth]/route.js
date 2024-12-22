@@ -8,6 +8,9 @@ const handler = NextAuth({
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
+  pages: {
+    error: "/auth/error",  // Points to app/auth/error/page.js
+  },
 })
 
 export { handler as GET, handler as POST }

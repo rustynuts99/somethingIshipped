@@ -6,7 +6,17 @@ import Link from 'next/link'
 import { signIn, signOut, useSession } from "next-auth/react"
 
 const NavBar = () => {
-  const { data: session } = useSession()
+    const { data: session, status } = useSession()
+  
+    // Add loading state
+    if (status === "loading") {
+      return (
+        <nav className="flex items-center justify-between bg-gray-800 text-white p-4">
+          <div className="text-lg font-bold">JustShipIt</div>
+          <div className="animate-pulse bg-gray-600 h-8 w-24 rounded"></div>
+        </nav>
+      )
+    }
 
   return (
 
@@ -55,6 +65,7 @@ const NavBar = () => {
           <button
             className="bg-orange-500 px-4 py-2 rounded hover:bg-orange-600"
             onClick={() => signIn("github")}
+            
           >
             Sign In
           </button>

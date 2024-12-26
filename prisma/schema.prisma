@@ -25,19 +25,17 @@ model User {
 
 model Project {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
+  title       String    // Changed from name to title
   description String
-  media       Json      // Will store image and video URLs
-  links       Json      // Will store project URLs
-  tech        String[]
-  categories  String[]
-  status      String    @default("live")
+  media       Json      // Will store devDuration and any future media
+  links       Json      // Stores project URLs
+  techStack   String[]  // Simplified to just techStack
+  categories  String[]  // For multiple categories if needed
   upvotes     Upvote[]
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   user        User      @relation(fields: [userId], references: [id])
   userId      String    @db.ObjectId
-  techStack   String[]
 }
 
 model Upvote {

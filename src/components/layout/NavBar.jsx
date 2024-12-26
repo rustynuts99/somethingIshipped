@@ -23,7 +23,7 @@ const NavBar = () => {
     <nav className="flex items-center justify-between bg-gray-800 text-white p-4">
     {/* Logo */}
     <Link href="/">
-      <div className="text-lg font-bold cursor-pointer">Something I Shipped</div>
+      <div className="text-lg font-bold cursor-pointer">JustShipIt</div>
     </Link>
 
     <div className="flex space-x-4">
